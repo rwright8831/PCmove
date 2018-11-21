@@ -1,0 +1,22 @@
+@Echo Off
+set /P info=Please enter the users logon ID:
+set /P drive=Please enter the letter of the drive you want to access.
+CD C:\Users\%Info%\OneDrive - Pace Bus
+Mkdir PC_copy
+CD "C:\Users\%Info%\OneDrive - Pace Bus\PC_copy"
+mkdir Document_copy
+mkdir desktop_copy
+mkdir pictures_copy
+mkdir Downloads_copy
+mkdir Pictures_copy
+CD C:\Users\%Info%\desktop
+xcopy C:\Users\%info%\Desktop "C:\Users\%Info%\OneDrive - Pace Bus\PC_copy\desktop_copy" /O /X /E /H /K /S /Y
+CD C:\Users\%Info%\OneDrive - Pace Bus
+CD C:\Users\%Info%\documents
+xcopy C:\Users\%info%\Documents "C:\Users\%Info%\OneDrive - Pace Bus\PC_copy\Document_copy" /O /X /E /H /K /S /Y
+CD C:\Users\%Info%\Downloads
+xcopy C:\Users\%info%\Downloads "C:\Users\%Info%\OneDrive - Pace Bus\PC_copy\Downloads_copy" /O /X /E /H /K /S /Y
+CD C:\Users\%Info%\pictures
+xcopy C:\Users\%info%\pictures "C:\Users\%Info%\OneDrive - Pace Bus\PC_copy\Pictures_copy" /O /X /E /H /K /S /Y
+Dir
+Pause
